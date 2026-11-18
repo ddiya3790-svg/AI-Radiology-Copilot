@@ -1,0 +1,244 @@
+BRAIN TUMOR TYPES
+=================
+
+Purpose
+-------
+This document provides general educational information about the brain-tumor-related classes used by the AI Radiology Copilot image-classification model.
+
+The model has four output classes:
+
+1. Glioma
+2. Meningioma
+3. No Tumor
+4. Pituitary
+
+The descriptions below are educational and do not represent individual patient diagnoses.
+
+--------------------------------------------------
+1. GLIOMA
+--------------------------------------------------
+
+Definition
+----------
+Gliomas are tumors that arise from glial cells in the brain or spinal cord.
+
+Gliomas represent a broad group of tumors with different biological behaviors and grades.
+
+General Characteristics
+------------------------
+Gliomas can occur in different regions of the central nervous system.
+
+Their appearance on MRI can vary depending on tumor type, grade, location, and imaging sequence.
+
+Possible MRI Findings
+---------------------
+Depending on the tumor and imaging sequence, gliomas may demonstrate features such as:
+
+- abnormal signal intensity
+- mass effect
+- surrounding edema
+- contrast enhancement
+- infiltration of nearby brain tissue
+
+These findings are not specific enough to determine the complete diagnosis from an image-classification model alone.
+
+Important Classification Limitation
+------------------------------------
+The AI model's "glioma" prediction indicates that the input image was classified into the glioma class.
+
+It does not determine:
+
+- glioma grade
+- molecular subtype
+- exact tumor boundaries
+- tumor size
+- treatment
+- prognosis
+
+Clinical diagnosis requires appropriate medical evaluation and, when necessary, pathological and molecular testing.
+
+--------------------------------------------------
+2. MENINGIOMA
+--------------------------------------------------
+
+Definition
+----------
+Meningiomas are tumors that arise from the meninges, the protective layers surrounding the brain and spinal cord.
+
+Many meningiomas are relatively slow-growing, although behavior can vary according to tumor grade and other characteristics.
+
+General Characteristics
+------------------------
+Meningiomas can occur at different locations around the brain and spinal cord.
+
+On MRI, their appearance can vary according to tumor characteristics and imaging technique.
+
+Possible MRI Findings
+---------------------
+Depending on the individual lesion, imaging may demonstrate:
+
+- a well-defined mass
+- contrast enhancement
+- mass effect
+- displacement of adjacent structures
+- surrounding edema in some cases
+
+These findings require professional radiological interpretation.
+
+Important Classification Limitation
+------------------------------------
+The AI model's "meningioma" prediction means that the image was classified into the meningioma class by the trained model.
+
+It does not establish:
+
+- tumor grade
+- exact location
+- tumor size
+- growth rate
+- treatment
+- prognosis
+
+--------------------------------------------------
+3. NO TUMOR
+--------------------------------------------------
+
+Definition
+----------
+The "no tumor" class represents images in the project's dataset that are labeled as not containing a brain tumor.
+
+This is a machine-learning dataset label rather than a complete clinical statement about a patient.
+
+AI Classification Meaning
+-------------------------
+When the model predicts "no tumor", it means that the model found the image more similar to the patterns learned from the no-tumor training examples than to the other classes.
+
+A "no tumor" prediction should not be interpreted as proof that a patient has no neurological disease or no abnormality.
+
+Important Limitation
+--------------------
+The model may not detect every possible abnormality because it was trained specifically for the classes represented in its dataset.
+
+Therefore, the model should not be used to rule out disease.
+
+--------------------------------------------------
+4. PITUITARY
+--------------------------------------------------
+
+Definition
+----------
+The pituitary gland is a small endocrine gland located near the base of the brain.
+
+Pituitary tumors are abnormal growths involving the pituitary gland. Many pituitary tumors are benign.
+
+Hormonal Effects
+----------------
+Some pituitary tumors can produce excess hormones, while others may not produce hormones.
+
+The clinical effects depend on factors including the tumor and the hormones involved.
+
+MRI and Pituitary Tumors
+------------------------
+MRI is commonly used to evaluate the pituitary gland and surrounding structures.
+
+Imaging evaluation may consider:
+
+- size
+- location
+- relationship to nearby structures
+- contrast enhancement
+- effects on surrounding anatomy
+
+The AI model does not independently measure or determine these features.
+
+Important Classification Limitation
+------------------------------------
+A "pituitary" prediction means that the image was classified into the pituitary class.
+
+It does not establish:
+
+- tumor size
+- hormonal activity
+- exact anatomical measurements
+- clinical severity
+- treatment
+- prognosis
+
+--------------------------------------------------
+COMPARISON OF THE FOUR AI CLASSES
+--------------------------------------------------
+
+Glioma
+------
+Tumor group associated with glial cells of the central nervous system.
+
+Meningioma
+----------
+Tumor arising from the meninges surrounding the brain and spinal cord.
+
+No Tumor
+--------
+Dataset class representing images labeled as not containing a brain tumor.
+
+Pituitary
+---------
+Tumor class associated with abnormalities involving the pituitary region.
+
+--------------------------------------------------
+HOW THE AI MODEL USES THESE CLASSES
+--------------------------------------------------
+
+The project's ResNet50 model receives a preprocessed MRI image and produces four probability values corresponding to the four classes.
+
+Example:
+
+glioma:     0.10
+meningioma: 0.05
+notumor:    0.02
+pituitary:  0.83
+
+The predicted class is the class with the highest model probability.
+
+In this example, the predicted class would be pituitary.
+
+The probability values represent model outputs and should not be interpreted as clinical probabilities or certainty about a patient's diagnosis.
+
+--------------------------------------------------
+GRAD-CAM EXPLANATION
+--------------------------------------------------
+
+The project uses Grad-CAM to visualize image regions that contributed to the model's predicted class.
+
+Grad-CAM can help users understand which areas influenced the neural network's decision.
+
+However:
+
+- Grad-CAM is not a tumor segmentation method.
+- The highlighted region is not necessarily the exact tumor boundary.
+- A highlighted region does not prove that a tumor is present there.
+- Grad-CAM should not be interpreted as a clinical radiological finding.
+
+--------------------------------------------------
+PROJECT SAFETY AND SCOPE
+--------------------------------------------------
+
+This AI system is an academic/research prototype.
+
+Its purpose is to demonstrate:
+
+- medical image classification
+- deep learning
+- explainable AI
+- retrieval-augmented generation
+- agentic AI workflows
+
+The system is not intended to replace a radiologist or other healthcare professional.
+
+AI predictions must not be used as the sole basis for diagnosis, treatment, or other medical decisions.
+
+Sources
+-------
+1. National Cancer Institute (NCI), Brain Tumors
+2. National Cancer Institute (NCI), Adult Central Nervous System Tumors Treatment
+3. National Cancer Institute (NCI), Meningioma
+4. National Cancer Institute (NCI), Pituitary Tumors
+5. National Institute of Neurological Disorders and Stroke (NINDS), Brain Tumors

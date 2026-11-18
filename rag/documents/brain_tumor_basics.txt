@@ -1,0 +1,83 @@
+BRAIN TUMOR BASICS
+==================
+
+Definition
+----------
+A brain tumor is a growth of abnormal cells in the tissues of the brain. Brain and central nervous system (CNS) tumors can be benign or malignant.
+
+Primary and Metastatic Brain Tumors
+-----------------------------------
+A primary brain tumor begins in the brain or another part of the central nervous system. A metastatic brain tumor begins in another part of the body and spreads to the brain.
+
+Brain tumors can differ in their cell type, location, biological behavior, and grade. These differences affect diagnosis, treatment, and prognosis.
+
+Common Brain Tumor Categories
+-----------------------------
+Examples of primary CNS tumors include:
+
+- Gliomas
+- Meningiomas
+- Pituitary tumors
+- Schwannomas
+- Ependymomas
+- CNS lymphomas
+- Other less common tumor types
+
+Glioma
+------
+Gliomas are a group of tumors that form in glial cells of the brain and spinal cord. Glial cells support and protect nerve cells.
+
+Gliomas can occur in different parts of the brain or spinal cord. Their biological behavior varies, and some gliomas are low grade while others are high grade.
+
+Meningioma
+----------
+A meningioma is a primary CNS tumor that forms in the meninges, the layers of tissue covering the brain and spinal cord.
+
+Meningiomas are classified into different grades. Grade 1 meningiomas are generally slower growing, while higher-grade meningiomas can behave more aggressively.
+
+Pituitary Tumor
+---------------
+A pituitary tumor is a growth of abnormal cells in the pituitary gland. The pituitary gland is a small gland located near the base of the brain and plays an important role in hormone regulation.
+
+Many pituitary tumors are benign. Some pituitary tumors produce excess hormones while others do not.
+
+Symptoms
+--------
+Symptoms of brain tumors vary depending on factors such as tumor type and location. Possible symptoms can include headaches, seizures, changes in movement or sensation, confusion, and other neurological changes.
+
+Symptoms alone cannot determine the tumor type.
+
+Diagnosis
+---------
+Diagnosis of a brain tumor may involve medical history, neurological examination, imaging studies such as MRI, and sometimes biopsy or surgical tissue analysis.
+
+MRI can provide detailed images of brain structures, but an MRI image alone does not establish every aspect of a tumor diagnosis.
+
+Important limitation for this AI project
+----------------------------------------
+The AI Radiology Copilot in this project performs four-class image classification:
+
+- glioma
+- meningioma
+- notumor
+- pituitary
+
+The model prediction is a machine-learning classification result and should not be treated as a confirmed medical diagnosis.
+
+The model does not independently determine:
+- tumor grade
+- tumor stage
+- tumor size
+- exact anatomical location
+- molecular subtype
+- treatment
+- prognosis
+
+A qualified healthcare professional and appropriate clinical evaluation are required for diagnosis and medical decision-making.
+
+Sources
+-------
+1. National Cancer Institute (NCI), Brain Tumors—Patient Version
+2. National Cancer Institute (NCI), Brain Tumors—Health Professional Version
+3. National Cancer Institute (NCI), Definition of Brain Tumor
+4. National Cancer Institute (NCI), Adult Central Nervous System Tumors Treatment

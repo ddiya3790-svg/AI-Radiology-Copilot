@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07111f">
+    <title>AI Radiology Copilot</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- TOP NAV -->
+        <header class="topbar">
+            <div class="topbar-inner">
+
+                <a href="#" class="brand">
+                    <span class="brand-logo">+</span>
+                    <span>
+                        <strong>AI Radiology Copilot</strong>
+                        <small>Brain MRI Analysis</small>
+                    </span>
+                </a>
+
+                <div class="topbar-status">
+                    <span class="online-dot"></span>
+                    System Online
+                </div>
+
+            </div>
+        </header>
+
+
+        <main class="container">
+
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero-left">
+                    <span class="hero-label">AI-ASSISTED MRI SCREENING</span>
+
+                    <h1>
+                        Brain MRI
+                        <span>Analysis</span>
+                    </h1>
+
+                    <p>
+                        Upload a brain MRI scan to receive an AI classification,
+                        visual explanation, evidence-grounded assistance, and a
+                        structured research report.
+                    </p>
+                </div>
+
+                <div class="hero-line"></div>
+            </section>
+
+
+            <!-- WORKSPACE -->
+            <section class="workspace">
+
+                <!-- LEFT: UPLOAD -->
+                <article class="upload-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <span class="step">01</span>
+                            <h2>Upload MRI</h2>
+                        </div>
+                        <span class="heading-status">READY</span>
+                    </div>
+
+                    <div id="dropZone" class="drop-zone">
+
+                        <div class="upload-circle">
+                            <span>↑</span>
+                        </div>
+
+                        <h3>Choose an MRI image</h3>
+
+                        <p>
+                            Drag and drop your scan here or
+                            <span>browse your files</span>
+                        </p>
+
+                        <small>JPG · JPEG · PNG</small>
+
+                        <input
+                            id="mriInput"
+                            type="file"
+                            accept=".jpg,.jpeg,.png"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <div id="previewContainer" class="preview hidden">
+
+                        <div class="preview-heading">
+                            <div>
+                                <span>SELECTED IMAGE</span>
+                                <strong id="fileName">image.jpg</strong>
+                            </div>
+
+                            <button
+                                id="removeBtn"
+                                type="button"
+                                class="remove-btn"
+                            >
+                                Remove
+                            </button>
+                        </div>
+
+                        <div class="preview-image">
+                            <img id="mriPreview" alt="MRI Preview">
+                        </div>
+
+                        <div class="file-size" id="fileSize">0 KB</div>
+
+                    </div>
+
+
+                    <button
+                        id="analyzeBtn"
+                        type="button"
+                        class="primary-btn"
+                    >
+                        <span>Analyze MRI</span>
+                        <span>→</span>
+                    </button>
+
+                    <div id="status" class="status-message">
+                        Ready to analyze your MRI scan.
+                    </div>
+
+                </article>
+
+
+                <!-- RIGHT: SIMPLE SYSTEM INFO -->
+                <aside class="info-panel">
+
+                    <span class="info-label">CURRENT MODEL</span>
+
+                    <div class="model-name">
+                        ResNet<span>50</span>
+                    </div>
+
+                    <p>
+                        Trained brain MRI classifier with
+                        Grad-CAM explainability.
+                    </p>
+
+                    <div class="info-divider"></div>
+
+                    <div class="info-row">
+                        <span>Prediction</span>
+                        <strong>4 classes</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Explainability</span>
+                        <strong>Grad-CAM</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Assistant</span>
+                        <strong>RAG</strong>
+                    </div>
+
+                </aside>
+
+            </section>
+
+
+            <!-- RESULT SECTION -->
+            <section id="resultSection" class="result-section hidden">
+
+                <div class="section-title">
+                    <div>
+                        <span class="step">02</span>
+                        <h2>Analysis Result</h2>
+                    </div>
+                    <span class="heading-status">COMPLETE</span>
+                </div>
+
+
+                <div class="result-layout">
+
+                    <!-- MAIN RESULT -->
+                    <article class="prediction-panel">
+
+                        <span class="result-label">PREDICTED CLASS</span>
+
+                        <div id="predictedClass" class="prediction">
+                            —
+                        </div>
+
+                        <div class="confidence">
+                            <div class="confidence-top">
+                                <span>Confidence</span>
+                                <strong id="confidence">—</strong>
+                            </div>
+
+                            <div class="confidence-track">
+                                <div
+                                    id="confidenceFill"
+                                    class="confidence-fill"
+                                ></div>
+                            </div>
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROBABILITIES -->
+                    <article class="probability-panel">
+
+                        <span class="result-label">CLASS PROBABILITIES</span>
+
+                        <div
+                            id="probabilityList"
+                            class="probabilities"
+                        ></div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- GRAD CAM -->
+                <article class="gradcam-panel">
+
+                    <div class="section-title small-title">
+                        <div>
+                            <span class="result-label">EXPLAINABILITY</span>
+                            <h2>Grad-CAM</h2>
+                        </div>
+
+                        <span class="plain-badge">MODEL ATTENTION</span>
+                    </div>
+
+                    <div class="gradcam-image">
+                        <img
+                            id="gradcamImage"
+                            alt="Grad-CAM visualization"
+                        >
+                    </div>
+
+                    <p class="image-note">
+                        Grad-CAM shows image regions that influenced the model's prediction.
+                        It is not a tumor segmentation or clinical diagnosis.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- ASSISTANT -->
+            <section id="assistantSection" class="assistant-section">
+
+                <div class="section-title">
+                    <div>
+                        <span class="step">03</span>
+                        <h2>Medical AI Assistant</h2>
+                    </div>
+
+                    <span class="plain-badge">RAG</span>
+                </div>
+
+
+                <article class="assistant-panel">
+
+                    <div class="assistant-top">
+                        <div>
+                            <h3>Ask about the result</h3>
+                            <p>
+                                Get an evidence-grounded educational explanation.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="question-area">
+
+                        <textarea
+                            id="ragQuestion"
+                            rows="3"
+                            placeholder="Example: What does this prediction mean?"
+                        ></textarea>
+
+                        <button
+                            id="askAiBtn"
+                            type="button"
+                            class="secondary-btn"
+                        >
+                            Ask AI
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="ragLoading"
+                        class="loading"
+                        style="display:none;"
+                    >
+                        <span class="spinner"></span>
+                        Generating answer...
+                    </div>
+
+
+                    <div
+                        id="ragAnswer"
+                         class="answer"
+                         style="display:none;"
+>
+                        <span class="result-label">AI EXPLANATION</span>
+
+                        <div
+                            id="ragAnswerText"
+                            class="answer-text"
+                        ></div>
+                    </div>
+
+
+                    <div
+                        id="ragSources"
+                        class="sources"
+                        style="display:none;"
+                    >
+                        <span class="result-label">SOURCES</span>
+
+                        <div
+                            id="ragSourcesList"
+                            class="sources-list"
+                        ></div>
+                    </div>
+
+
+                    <div class="assistant-note">
+                        Educational information only. This assistant does not
+                        provide a medical diagnosis or treatment recommendation.
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- REPORT -->
+            <section id="reportSection" class="report-section">
+
+                <div class="section-title">
+                    <div>
+                        <span class="step">04</span>
+                        <h2>AI Report</h2>
+                    </div>
+                </div>
+
+
+                <article class="report-panel">
+
+                    <div class="report-intro">
+                        <div>
+                            <h3>Generate a structured report</h3>
+                            <p>
+                                Combines the prediction, confidence, Grad-CAM
+                                result, and retrieved evidence.
+                            </p>
+                        </div>
+
+                        <button
+                            id="generateReportBtn"
+                            type="button"
+                            class="secondary-btn report-btn"
+                        >
+                            Generate Report
+                            <span>→</span>
+                        </button>
+                    </div>
+
+
+                    <div
+                        id="reportLoading"
+                        class="loading"
+                        style="display:none;"
+                    >
+                        <span class="spinner"></span>
+                        Generating report...
+                    </div>
+
+
+                    <div
+                        id="aiReport"
+                        class="generated-report"
+                        style="display:none;"
+                    >
+
+                        <div class="report-heading">
+                            <div>
+                                <span class="result-label">GENERATED REPORT</span>
+                                <h3>AI Radiology Analysis Summary</h3>
+                            </div>
+
+                            <span class="plain-badge">GENERATED</span>
+                        </div>
+
+                        <div
+                            id="reportContent"
+                            class="report-content"
+                        ></div>
+
+                        <div class="report-warning">
+                            <strong>Research & Educational Use Only</strong>
+                            <p>
+                                This report is generated by an academic AI
+                                research system and is not a clinical diagnosis.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- DISCLAIMER -->
+            <section class="disclaimer">
+
+                <div class="warning-icon">!</div>
+
+                <div>
+                    <strong>Research & Educational Use Only</strong>
+                    <p>
+                        This application is an academic AI research prototype.
+                        Model predictions and generated information should not
+                        be used as a substitute for professional medical advice.
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer class="footer">
+            <span><strong>AI Radiology Copilot</strong> · Brain Tumor Detection</span>
+            <span>ResNet50 · Grad-CAM · RAG</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+HOW BRAIN TUMORS ARE DIAGNOSED
+
+Diagnosing a brain tumor usually requires more than looking at one MRI image.
+
+A healthcare professional may consider:
+
+- The person's medical history
+- Current symptoms
+- Neurological examination
+- Imaging studies
+- MRI scans
+- Other tests when appropriate
+- Biopsy or surgical tissue examination when needed
+
+MRI is an important imaging method for examining the brain. It can provide detailed images that help doctors identify abnormal areas.
+
+However, an MRI image alone does not necessarily establish the exact type or grade of a tumor.
+
+A biopsy may be used to examine tumor tissue. A pathologist can study the tissue to help determine the tumor type and grade.
+
+The exact diagnostic process depends on the individual situation.
+
+AI IMAGE CLASSIFICATION VS MEDICAL DIAGNOSIS
+
+An AI classification model analyzes image patterns and produces a predicted class.
+
+For example, an AI model may classify an uploaded MRI image as:
+
+- Glioma
+- Meningioma
+- No Tumor
+- Pituitary
+
+This prediction is not equivalent to a medical diagnosis.
+
+The AI model does not replace:
+
+- A radiologist's interpretation
+- A neurologist's evaluation
+- A neurosurgeon's assessment
+- Pathology or biopsy when required
+- Other clinical investigations
+
+The AI prediction should therefore be treated as an educational or research result rather than a confirmed diagnosis.

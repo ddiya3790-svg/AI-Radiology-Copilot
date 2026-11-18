@@ -1,0 +1,45 @@
+QUESTIONS TO ASK A DOCTOR
+
+A person discussing a possible or confirmed brain tumor with a healthcare professional may want to ask questions such as:
+
+ABOUT THE DIAGNOSIS
+
+- What exactly does my scan show?
+- Is there an abnormal area that needs further investigation?
+- What additional tests are needed?
+- Do I need a biopsy?
+- What is the exact type of tumor if a tumor is confirmed?
+- What is the tumor grade?
+- Where is the tumor located?
+- What is its size?
+- Should I get a second opinion?
+
+ABOUT TREATMENT
+
+- What treatment options are available?
+- What is the standard treatment for this tumor type?
+- What are the benefits and risks of each treatment?
+- Is surgery necessary?
+- Are radiation or medicines options?
+- How will we know whether treatment is working?
+- What side effects should I expect?
+- Are there clinical trials that may be relevant?
+
+ABOUT NEXT STEPS
+
+- What should I do next?
+- Which specialist should I see?
+- How soon should I have additional testing?
+- How often will I need follow-up imaging?
+- What symptoms should I report?
+
+ABOUT THE AI RESULT
+
+If an AI system has produced a prediction, useful questions for a healthcare professional may include:
+
+- Can you explain what my MRI shows?
+- Does the AI result agree with the clinical interpretation?
+- Does this scan require additional imaging or testing?
+- What information is still needed before a diagnosis can be made?
+
+The AI system can help a person prepare questions, but it cannot determine the correct diagnosis or treatment plan.

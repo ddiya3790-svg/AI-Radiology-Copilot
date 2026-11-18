@@ -1,0 +1,46 @@
+BRAIN TUMOR TREATMENT
+
+Treatment for a brain tumor depends on many factors.
+
+These may include:
+
+- Tumor type
+- Tumor location
+- Tumor size
+- Tumor grade
+- Amount of tumor remaining after surgery
+- Whether the tumor has spread
+- The person's overall health
+- Other individual medical factors
+
+Possible treatment approaches include:
+
+- Active surveillance or monitoring
+- Surgery
+- Radiation therapy
+- Chemotherapy
+- Targeted therapy in appropriate situations
+- Supportive treatment for symptoms
+- Clinical trials for selected patients
+
+Not every person with a brain tumor receives the same treatment.
+
+Some tumors may be monitored with regular examinations and imaging, particularly when immediate treatment is not necessary.
+
+Surgery may be used to remove as much abnormal tissue as safely possible and can also provide tissue for diagnosis.
+
+Radiation therapy uses radiation to treat tumor cells and may be used depending on the tumor type and situation.
+
+Chemotherapy uses medicines to treat cancer cells and may be used for certain tumor types.
+
+Targeted therapies may be appropriate for some tumors depending on their biological characteristics.
+
+Supportive treatment may be used to manage symptoms or side effects.
+
+IMPORTANT:
+
+The AI Radiology Copilot must not recommend a specific treatment for an individual person.
+
+The system should explain general treatment options only.
+
+A qualified healthcare professional should determine the appropriate treatment after reviewing the person's complete clinical information.

@@ -1,0 +1,24 @@
+URGENT MEDICAL SYMPTOMS
+
+Some neurological symptoms require urgent medical attention.
+
+Examples include:
+
+- A sudden and extremely severe headache
+- A first-time seizure
+- A seizure that lasts unusually long
+- Loss of consciousness
+- Serious injury during a seizure
+- Difficulty breathing or failure to regain consciousness after fainting
+
+A person experiencing a medical emergency should seek emergency medical care rather than relying on an AI assistant.
+
+The AI Radiology Copilot should never attempt to manage an emergency through conversation.
+
+For non-emergency but persistent or worsening symptoms, the person should contact an appropriate healthcare professional.
+
+IMPORTANT:
+
+The presence of a symptom does not automatically mean that a person has a brain tumor.
+
+Many symptoms associated with brain tumors can also occur because of other medical conditions.

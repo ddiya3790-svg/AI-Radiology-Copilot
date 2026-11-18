@@ -1,0 +1,97 @@
+MRI BASICS
+==========
+
+What is MRI?
+------------
+Magnetic Resonance Imaging (MRI) is a medical imaging technique that uses a strong magnetic field and radio waves to create detailed images of structures inside the body.
+
+MRI is particularly useful for imaging the brain and spinal cord because it provides high-contrast images of soft tissues.
+
+MRI and Brain Imaging
+---------------------
+Brain MRI can show detailed anatomical structures and can help clinicians evaluate abnormalities such as tumors, bleeding, inflammation, infections, and other neurological conditions.
+
+Different MRI sequences provide different types of information.
+
+Common MRI Sequences
+--------------------
+T1-weighted MRI:
+Provides anatomical detail and commonly shows differences between tissues based on their T1 relaxation properties.
+
+T2-weighted MRI:
+Provides strong contrast for tissues containing more water and can make many abnormalities appear relatively bright.
+
+FLAIR:
+Fluid-attenuated inversion recovery (FLAIR) suppresses the signal from cerebrospinal fluid (CSF). It can make certain abnormalities in the brain more conspicuous.
+
+T1 with contrast:
+A contrast-enhanced T1-weighted MRI may be used to evaluate enhancement associated with certain abnormalities. Gadolinium-based contrast agents may be administered when clinically appropriate.
+
+Why MRI is Useful for Brain Tumors
+----------------------------------
+MRI can provide information about the location and appearance of a brain abnormality and its relationship to surrounding structures.
+
+Radiologists may evaluate features such as:
+- lesion location
+- signal characteristics
+- contrast enhancement
+- surrounding edema
+- mass effect
+- involvement of nearby structures
+
+However, interpretation depends on the complete imaging study, clinical history, and other available information.
+
+MRI Does Not Automatically Establish a Diagnosis
+-------------------------------------------------
+An abnormal area on MRI does not by itself establish the exact tumor type, grade, or biological behavior.
+
+Definitive diagnosis may require additional clinical evaluation and, in some cases, pathological examination of tissue.
+
+AI and MRI Classification
+-------------------------
+An AI model can be trained to identify patterns in MRI images associated with predefined classes.
+
+In this project, the classification model predicts one of four classes:
+
+1. Glioma
+2. Meningioma
+3. No Tumor
+4. Pituitary
+
+The model's output represents a learned image-classification prediction.
+
+Important AI limitation
+-----------------------
+The AI model does not replace radiologist interpretation.
+
+A prediction such as "glioma" means that the image was classified into the glioma class by the trained model. It does not independently confirm that the patient has a glioma.
+
+The model should not be used to determine:
+- definitive diagnosis
+- tumor grade
+- tumor stage
+- treatment
+- prognosis
+- exact tumor measurements
+- clinical management decisions
+
+Grad-CAM and MRI
+----------------
+Grad-CAM (Gradient-weighted Class Activation Mapping) is an explainability technique that can visualize image regions that contributed to a neural network's prediction.
+
+In this project, Grad-CAM is used to provide a visual explanation of the model's classification.
+
+Grad-CAM should be interpreted as a model-attention explanation, not as a medically validated tumor segmentation or precise tumor boundary.
+
+Educational Use
+----------------
+This project's MRI analysis system is intended for academic and research purposes.
+
+AI predictions and Grad-CAM visualizations should be reviewed by qualified medical professionals before any clinical interpretation.
+
+Sources
+-------
+1. RadiologyInfo.org, Magnetic Resonance Imaging (MRI) of the Head
+2. RadiologyInfo.org, Brain Tumor Imaging
+3. National Institute of Biomedical Imaging and Bioengineering (NIBIB), Magnetic Resonance Imaging
+4. National Cancer Institute (NCI), Brain Tumors
