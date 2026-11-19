@@ -4,7 +4,7 @@
 .env.*
 !.env.example
 
-# Python virtual environment
+# Python virtual environments
 .venv/
 venv/
 env/
@@ -31,9 +31,13 @@ Thumbs.db
 temp/
 tmp/
 
-# Dataset and generated outputs
+# Dataset files
 dataset/
 datasets/
-uploads/
 
+# Uploaded MRI images
+uploads/
 output/uploads/
+
+# Local package snapshot
+installed_packages.txt
