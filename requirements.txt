@@ -1,6 +1,5 @@
-
 fastapi
-uvicorn[standard]
+uvicorn
 python-multipart
 tensorflow
 numpy
@@ -10,3 +9,4 @@ python-dotenv
 groq
 faiss-cpu
 sentence-transformers
+matplotlib
